@@ -546,13 +546,17 @@ func (downloader *Downloader) aria2(title string, stream *extractors.Stream) err
 	return nil
 }
 
-func (downloader *Downloader) GetInfo(d *types.Data) (Site, Title, Type string, SizeSlice []int64) {
+func (downloader *Downloader) GetInfo(d *types.Data) (Site, Title, Type string, Size int64) {
 	sortedStreams := genSortedStreams(d.Streams)
-	sizeSlice := make([]int64, 64)
-	for _, stream := range sortedStreams {
-		sizeSlice = append(sizeSlice, stream.Size)
+	streamName := downloader.option.Stream
+	if streamName == "" {
+		streamName = sortedStreams[0].ID
 	}
-	return d.Site, d.Title, string(d.Type), sizeSlice
+	stream, ok := d.Streams[streamName]
+	if !ok {
+		fmt.Errorf("no stream named %s", streamName)
+	}
+	return d.Site, d.Title, string(d.Type), stream.Size
 }
 
 // Download download urls
