@@ -1,4 +1,4 @@
-module github.com/iawia002/annie
+module github.com/135e2/annie
 
 go 1.16
 
@@ -9,6 +9,7 @@ require (
 	github.com/cheggaaa/pb/v3 v3.0.8
 	github.com/fatih/color v1.10.0
 	github.com/go-rod/rod v0.101.0
+	github.com/iawia002/annie v0.11.1-0.20211213092159-8b53403c0c12 // indirect
 	github.com/json-iterator/go v1.1.11
 	github.com/kkdai/youtube/v2 v2.7.2
 	github.com/kr/pretty v0.1.0
