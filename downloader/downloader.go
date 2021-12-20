@@ -123,6 +123,29 @@ func (downloader *Downloader) writeFile(url string, file *os.File, headers map[s
 	return written, nil
 }
 
+func (downloader *Downloader) GetSize(part *extractors.Part, refer, fileName string) (savedSize int64, err error) {
+	filePath, err := utils.FilePath(fileName, part.Ext, downloader.option.FileNameLength, downloader.option.OutputPath, false)
+	if err != nil {
+		return savedSize, err
+	}
+	fileSize, exists, err := utils.FileSize(filePath)
+	if err != nil {
+		return fileSize, err
+	}
+	// Skip segment file
+	// TODO: Live video URLs will not return the size
+	if exists && fileSize == part.Size {
+		return part.Size, nil
+	}
+
+	tempFilePath := filePath + ".download"
+	tempFileSize, _, err := utils.FileSize(tempFilePath)
+	if err != nil {
+		return tempFileSize, nil
+	}
+	return tempFileSize, nil
+}
+
 func (downloader *Downloader) save(part *extractors.Part, refer, fileName string) error {
 	filePath, err := utils.FilePath(fileName, part.Ext, downloader.option.FileNameLength, downloader.option.OutputPath, false)
 	if err != nil {
