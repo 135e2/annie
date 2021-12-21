@@ -546,7 +546,7 @@ func (downloader *Downloader) aria2(title string, stream *extractors.Stream) err
 	return nil
 }
 
-func (downloader *Downloader) GetInfo(d *types.Data) (Site, Title, Type string, Size int64) {
+func (downloader *Downloader) GetInfo(d *types.Data) (Site, Title, Type string, Size, FileNameLength int64, stream *types.Stream) {
 	sortedStreams := genSortedStreams(d.Streams)
 	streamName := downloader.option.Stream
 	if streamName == "" {
@@ -556,7 +556,8 @@ func (downloader *Downloader) GetInfo(d *types.Data) (Site, Title, Type string, 
 	if !ok {
 		fmt.Errorf("no stream named %s", streamName)
 	}
-	return d.Site, d.Title, string(d.Type), stream.Size
+	FileNameLength = int64(downloader.option.FileNameLength)
+	return d.Site, d.Title, string(d.Type), stream.Size, FileNameLength, stream
 }
 
 // Download download urls
