@@ -3,6 +3,7 @@ module github.com/135e2/annie
 go 1.16
 
 require (
+	github.com/135e2/pb v1.0.30-0.20220102093356-b9c1f4cdec6c
 	github.com/MercuryEngineering/CookieMonster v0.0.0-20180304172713-1584578b3403
 	github.com/PuerkitoBio/goquery v1.4.1
 	github.com/cheggaaa/pb v1.0.29

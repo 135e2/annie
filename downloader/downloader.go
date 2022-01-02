@@ -15,7 +15,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/cheggaaa/pb"
+	"github.com/135e2/pb"
 
 	"github.com/iawia002/annie/extractors/types"
 	"github.com/iawia002/annie/request"
