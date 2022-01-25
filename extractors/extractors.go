@@ -14,6 +14,7 @@ import (
 	"github.com/iawia002/annie/extractors/geekbang"
 	"github.com/iawia002/annie/extractors/haokan"
 	"github.com/iawia002/annie/extractors/hupu"
+	"github.com/iawia002/annie/extractors/huya"
 	"github.com/iawia002/annie/extractors/instagram"
 	"github.com/iawia002/annie/extractors/iqiyi"
 	"github.com/iawia002/annie/extractors/mgtv"
@@ -83,6 +84,7 @@ func init() {
 		"streamtape": stExtractor,
 		"streamta":   stExtractor, // streamta.pe
 		"hupu":       hupu.New(),
+		"huya":       huya.New(),
 	}
 }
 
