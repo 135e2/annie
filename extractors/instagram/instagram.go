@@ -6,10 +6,10 @@ import (
 	"path"
 	"strings"
 
-	"github.com/iawia002/annie/extractors/types"
-	"github.com/iawia002/annie/parser"
-	"github.com/iawia002/annie/request"
-	"github.com/iawia002/annie/utils"
+	"github.com/135e2/annie/extractors/types"
+	"github.com/135e2/annie/parser"
+	"github.com/135e2/annie/request"
+	"github.com/135e2/annie/utils"
 )
 
 type instagram struct {
