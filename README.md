@@ -1,25 +1,30 @@
-<h1 align="center">Lux</h1>
+<p align="center"><img src="static/logo.png" alt="Annie" height="100px"></p>
 
 <div align="center">
-  <a href="https://codecov.io/gh/iawia002/lux">
-    <img src="https://img.shields.io/codecov/c/github/iawia002/lux.svg?style=flat-square" alt="Codecov">
+  <a href="https://codecov.io/gh/iawia002/annie">
+    <img src="https://img.shields.io/codecov/c/github/iawia002/annie.svg?style=flat-square" alt="Codecov">
   </a>
-  <a href="https://github.com/iawia002/lux/actions">
-    <img src="https://img.shields.io/github/workflow/status/iawia002/lux/ci?style=flat-square" alt="GitHub Workflow Status">
+  <a href="https://github.com/iawia002/annie/actions">
+    <img src="https://img.shields.io/github/workflow/status/iawia002/annie/ci?style=flat-square" alt="GitHub Workflow Status">
   </a>
-  <a href="https://goreportcard.com/report/github.com/iawia002/lux">
-    <img src="https://goreportcard.com/badge/github.com/iawia002/lux?style=flat-square" alt="Go Report Card">
+  <a href="https://goreportcard.com/report/github.com/iawia002/annie">
+    <img src="https://goreportcard.com/badge/github.com/iawia002/annie?style=flat-square" alt="Go Report Card">
   </a>
-  <a href="https://github.com/iawia002/lux/releases">
-    <img src="https://img.shields.io/github/release/iawia002/lux.svg?style=flat-square" alt="GitHub release">
+  <a href="https://github.com/iawia002/annie/releases">
+    <img src="https://img.shields.io/github/release/iawia002/annie.svg?style=flat-square" alt="GitHub release">
   </a>
-  <a href="https://formulae.brew.sh/formula/lux">
-    <img src="https://img.shields.io/homebrew/v/lux.svg?style=flat-square" alt="Homebrew">
+  <a href="https://formulae.brew.sh/formula/annie">
+    <img src="https://img.shields.io/homebrew/v/annie.svg?style=flat-square" alt="Homebrew">
+  </a>
+  <a href="https://t.me/anniedev">
+    <img src="https://img.shields.io/badge/telegram-join%20chat-0088cc.svg?longCache=true&style=flat-square" alt="telegram">
   </a>
 </div>
 
-👾 Lux is a fast and simple video downloader built with Go.
 
+👾 Annie is a fast, simple and clean video downloader built with Go.
+
+- [Maintainer's Note](#maintainer's-note)
 - [Installation](#installation)
   - [Prerequisites](#prerequisites)
   - [Install via `go install`](#install-via-go-install)
@@ -60,6 +65,12 @@
 - [Similar projects](#similar-projects)
 - [License](#license)
 
+## Maintainer's Note
+
+This is a modified version of [`lux`](https://github.com/iawia002/lux) (or former `annie`) for my personal project [annie-gtk](https://github.com/135e2/annie-gtk). 
+
+All commits are directly rebased / picked from upstream repo.
+
 
 ## Installation
 
@@ -73,42 +84,42 @@ The following dependencies are required and must be installed separately.
 
 ### Install via `go install`
 
-To install Lux, use `go install`, or download the binary file from [Releases](https://github.com/iawia002/lux/releases) page.
+To install Annie, use `go install`, or download the binary file from [Releases](https://github.com/iawia002/annie/releases) page.
 
 ```bash
-$ go install github.com/iawia002/lux@latest
+$ go install github.com/iawia002/annie@latest
 ```
 
 ### Homebrew (macOS only)
 
-For macOS users, you can install `lux` via:
+For macOS users, you can install `annie` via:
 
 ```bash
-$ brew install lux
+$ brew install annie
 ```
 
 ### Arch Linux
 
-For Arch Users [AUR](https://aur.archlinux.org/packages/lux) package is available.
+For Arch Users [AUR](https://aur.archlinux.org/packages/annie) package is available.
 
 ### Void Linux
 
-For Void linux users, you can install `lux` via:
+For Void linux users, you can install `annie` via:
 
 ```
-$ xbps-install -S lux
+$ xbps-install -S annie
 ```
 
 ### [Scoop](https://scoop.sh/) on Windows
 
 ```sh
-$ scoop install lux
+$ scoop install annie
 ```
 
 ### [Chocolatey](https://chocolatey.org/) on Windows
 
 ```
-$ choco install lux
+$ choco install annie
 ```
 
 ## Getting Started
@@ -116,13 +127,13 @@ $ choco install lux
 Usage:
 
 ```
-lux [OPTIONS] URL [URL...]
+annie [OPTIONS] URL [URL...]
 ```
 
 ### Download a video
 
 ```console
-$ lux "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+$ annie "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
  Site:      YouTube youtube.com
  Title:     Rick Astley - Never Gonna Give You Up (Video)
@@ -131,7 +142,7 @@ $ lux "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
      [248]  -------------------
      Quality:         1080p video/webm; codecs="vp9"
      Size:            63.93 MiB (67038963 Bytes)
-     # download with: lux -f 248 ...
+     # download with: annie -f 248 ...
 
  41.88 MiB / 63.93 MiB [=================>-------------]  65.51% 4.22 MiB/s 00m05s
 ```
@@ -139,7 +150,7 @@ $ lux "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 The `-i` option displays all available quality of video without downloading.
 
 ```console
-$ lux -i "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+$ annie -i "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 
  Site:      YouTube youtube.com
  Title:     Rick Astley - Never Gonna Give You Up (Video)
@@ -148,39 +159,39 @@ $ lux -i "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
      [248]  -------------------
      Quality:         1080p video/webm; codecs="vp9"
      Size:            49.29 MiB (51687554 Bytes)
-     # download with: lux -f 248 ...
+     # download with: annie -f 248 ...
 
      [137]  -------------------
      Quality:         1080p video/mp4; codecs="avc1.640028"
      Size:            43.45 MiB (45564306 Bytes)
-     # download with: lux -f 137 ...
+     # download with: annie -f 137 ...
 
      [398]  -------------------
      Quality:         720p video/mp4; codecs="av01.0.05M.08"
      Size:            37.12 MiB (38926432 Bytes)
-     # download with: lux -f 398 ...
+     # download with: annie -f 398 ...
 
      [136]  -------------------
      Quality:         720p video/mp4; codecs="avc1.4d401f"
      Size:            31.34 MiB (32867324 Bytes)
-     # download with: lux -f 136 ...
+     # download with: annie -f 136 ...
 
      [247]  -------------------
      Quality:         720p video/webm; codecs="vp9"
      Size:            31.03 MiB (32536181 Bytes)
-     # download with: lux -f 247 ...
+     # download with: annie -f 247 ...
 ```
 
-Use `lux -f stream "URL"` to download a specific stream listed in the output of `-i` option.
+Use `annie -f stream "URL"` to download a specific stream listed in the output of `-i` option.
 
 ### Download anything else
 
-If Lux is provided the URL of a specific resource, then it will be downloaded directly:
+If Annie is provided the URL of a specific resource, then it will be downloaded directly:
 
 ```console
-$ lux "https://img9.bcyimg.com/drawer/15294/post/1799t/1f5a87801a0711e898b12b640777720f.jpg"
+$ annie "https://img9.bcyimg.com/drawer/15294/post/1799t/1f5a87801a0711e898b12b640777720f.jpg"
 
-lux doesn't support this URL right now, but it will try to download it directly
+annie doesn't support this URL right now, but it will try to download it directly
 
  Site:      Universal
  Title:     1f5a87801a0711e898b12b640777720f
@@ -188,7 +199,7 @@ lux doesn't support this URL right now, but it will try to download it directly
  Stream:
      [default]  -------------------
      Size:            1.00 MiB (1051042 Bytes)
-     # download with: lux -f default "URL"
+     # download with: annie -f default "URL"
 
  1.00 MiB / 1.00 MiB [===================================] 100.00% 1.21 MiB/s 0s
 ```
@@ -198,7 +209,7 @@ lux doesn't support this URL right now, but it will try to download it directly
 The `-p` option downloads an entire playlist instead of a single video.
 
 ```console
-$ lux -i -p "https://www.bilibili.com/bangumi/play/ep198061"
+$ annie -i -p "https://www.bilibili.com/bangumi/play/ep198061"
 
  Site:      哔哩哔哩 bilibili.com
  Title:     Doctor X 第四季：第一集
@@ -207,7 +218,7 @@ $ lux -i -p "https://www.bilibili.com/bangumi/play/ep198061"
      [default]  -------------------
      Quality:         高清 1080P
      Size:            845.66 MiB (886738354 Bytes)
-     # download with: lux -f default "URL"
+     # download with: annie -f default "URL"
 
 
  Site:      哔哩哔哩 bilibili.com
@@ -217,7 +228,7 @@ $ lux -i -p "https://www.bilibili.com/bangumi/play/ep198061"
      [default]  -------------------
      Quality:         高清 1080P
      Size:            930.71 MiB (975919195 Bytes)
-     # download with: lux -f default "URL"
+     # download with: annie -f default "URL"
 
 ......
 ```
@@ -245,7 +256,7 @@ For bilibili playlists only:
 You can also download multiple URLs at once:
 
 ```console
-$ lux -i "https://www.bilibili.com/video/av21877586" "https://www.bilibili.com/video/av21990740"
+$ annie -i "https://www.bilibili.com/video/av21877586" "https://www.bilibili.com/video/av21990740"
 
  Site:      哔哩哔哩 bilibili.com
  Title:     【莓机会了】甜到虐哭的13集单集MAD「我现在什么都不想干,更不想看14集」
@@ -254,7 +265,7 @@ $ lux -i "https://www.bilibili.com/video/av21877586" "https://www.bilibili.com/v
      [default]  -------------------
      Quality:         高清 1080P
      Size:            51.88 MiB (54403767 Bytes)
-     # download with: lux -f default "URL"
+     # download with: annie -f default "URL"
 
 
  Site:      哔哩哔哩 bilibili.com
@@ -264,7 +275,7 @@ $ lux -i "https://www.bilibili.com/video/av21877586" "https://www.bilibili.com/v
      [default]  -------------------
      Quality:         高清 1080P
      Size:            77.63 MiB (81404093 Bytes)
-     # download with: lux -f default "URL"
+     # download with: annie -f default "URL"
 ```
 
 These URLs will be downloaded one by one.
@@ -272,7 +283,7 @@ These URLs will be downloaded one by one.
 You can also use the `-F` option to read URLs from file:
 
 ```console
-$ lux -F ~/Desktop/u.txt
+$ annie -F ~/Desktop/u.txt
 
  Site:      微博 weibo.com
  Title:     在Google，我们设计什么？ via@阑夕
@@ -280,7 +291,7 @@ $ lux -F ~/Desktop/u.txt
  Stream:
      [default]  -------------------
      Size:            19.19 MiB (20118196 Bytes)
-     # download with: lux -f default "URL"
+     # download with: annie -f default "URL"
 
  19.19 MiB / 19.19 MiB [=================================] 100.00% 9.69 MiB/s 1s
 
@@ -302,15 +313,15 @@ You can use the `-start`, `-end` or `-items` option to specify the download rang
 
 <kbd>Ctrl</kbd>+<kbd>C</kbd> interrupts a download.
 
-A temporary `.download` file is kept in the output directory. If `lux` is ran with the same arguments, then the download progress will resume from the last session.
+A temporary `.download` file is kept in the output directory. If `annie` is ran with the same arguments, then the download progress will resume from the last session.
 
 ### Auto retry
 
-lux will auto retry when the download failed, you can specify the retry times by `-retry` option (default is 100).
+annie will auto retry when the download failed, you can specify the retry times by `-retry` option (default is 100).
 
 ### Cookies
 
-Cookies can be provided to `lux` with the `-c` option if they are required for accessing the video.
+Cookies can be provided to `annie` with the `-c` option if they are required for accessing the video.
 
 Cookies can be the following format or [Netscape Cookie](https://curl.haxx.se/rfc/cookie_spec.html) format:
 
@@ -323,28 +334,28 @@ Cookies can be a string or a text file, supply cookies in one of the two followi
 As a string:
 
 ```console
-$ lux -c "name=value; name2=value2" "https://www.bilibili.com/video/av20203945"
+$ annie -c "name=value; name2=value2" "https://www.bilibili.com/video/av20203945"
 ```
 
 As a text file:
 
 ```console
-$ lux -c cookies.txt "https://www.bilibili.com/video/av20203945"
+$ annie -c cookies.txt "https://www.bilibili.com/video/av20203945"
 ```
 
-If the `-c` is not set, `lux` will try to get the cookies from the current user's Chrome or Edge automatically.
-To use this feature, you need to shutdown your Chrome or Edge for only one time and let `lux` launch the browser for you.
+If the `-c` is not set, `annie` will try to get the cookies from the current user's Chrome or Edge automatically.
+To use this feature, you need to shutdown your Chrome or Edge for only one time and let `annie` launch the browser for you.
 
 ### Proxy
 
 You can set the HTTP/SOCKS5 proxy using environment variables:
 
 ```console
-$ HTTP_PROXY="http://127.0.0.1:1087/" lux -i "https://www.youtube.com/watch?v=Gnbch2osEeo"
+$ HTTP_PROXY="http://127.0.0.1:1087/" annie -i "https://www.youtube.com/watch?v=Gnbch2osEeo"
 ```
 
 ```console
-$ HTTP_PROXY="socks5://127.0.0.1:1080/" lux -i "https://www.youtube.com/watch?v=Gnbch2osEeo"
+$ HTTP_PROXY="socks5://127.0.0.1:1080/" annie -i "https://www.youtube.com/watch?v=Gnbch2osEeo"
 ```
 
 ### Multi-Thread
@@ -359,7 +370,7 @@ Use `-n` option to set the number of download threads(default is 10, only works 
 You can just use `av` or `ep` number to download bilibili's video:
 
 ```console
-$ lux -i ep198381 av21877586
+$ annie -i ep198381 av21877586
 
  Site:      哔哩哔哩 bilibili.com
  Title:     狐妖小红娘：第79话 南国公主的吃货本色
@@ -368,7 +379,7 @@ $ lux -i ep198381 av21877586
      [default]  -------------------
      Quality:         高清 1080P
      Size:            485.23 MiB (508798478 Bytes)
-     # download with: lux -f default "URL"
+     # download with: annie -f default "URL"
 
 
  Site:      哔哩哔哩 bilibili.com
@@ -378,7 +389,7 @@ $ lux -i ep198381 av21877586
      [default]  -------------------
      Quality:         高清 1080P
      Size:            51.88 MiB (54403767 Bytes)
-     # download with: lux -f default "URL"
+     # download with: annie -f default "URL"
 ```
 
 ### Use specified Referrer
@@ -387,7 +398,7 @@ A Referrer can be used for the request with the `-r` option:
 
 
 ```console
-$ lux -r "https://www.bilibili.com/video/av20383055/" "http://cn-scnc1-dx.acgvideo.com/"
+$ annie -r "https://www.bilibili.com/video/av20383055/" "http://cn-scnc1-dx.acgvideo.com/"
 ```
 
 ### Specify the output path and name
@@ -395,7 +406,7 @@ $ lux -r "https://www.bilibili.com/video/av20383055/" "http://cn-scnc1-dx.acgvid
 The `-o` option sets the path, and `-O` option sets the name of the downloaded file:
 
 ```console
-$ lux -o ../ -O "hello" "https://example.com"
+$ annie -o ../ -O "hello" "https://example.com"
 ```
 
 ### Debug Mode
@@ -403,7 +414,7 @@ $ lux -o ../ -O "hello" "https://example.com"
 The `-d` option outputs network request messages:
 
 ```console
-$ lux -i -d "http://www.bilibili.com/video/av20088587"
+$ annie -i -d "http://www.bilibili.com/video/av20088587"
 
 URL:         http://www.bilibili.com/video/av20088587
 Method:      GET
@@ -436,7 +447,7 @@ Status Code: 200
      [default]  -------------------
      Quality:         高清 1080P
      Size:            64.38 MiB (67504795 Bytes)
-     # download with: lux -f default "URL"
+     # download with: annie -f default "URL"
 ```
 
 ### Reuse extracted data
@@ -444,7 +455,7 @@ Status Code: 200
 The `-j` option will print the extracted data in JSON format.
 
 ```console
-$ lux -j "https://www.bilibili.com/video/av20203945"
+$ annie -j "https://www.bilibili.com/video/av20203945"
 
 {
     "site": "哔哩哔哩 bilibili.com",
@@ -629,22 +640,26 @@ $ lux -j "https://www.bilibili.com/video/av20203945"
 
 ### 优酷
 
-优酷的 `ccode` 经常变化导致 lux 不可用，如果你知道有新的可用的 `ccode`，可以直接使用 `lux -ccode ...` 而不用等待 lux 更新（当然，也欢迎你给我们提一个 Pull request 来更新默认的 `ccode`）
+优酷的 `ccode` 经常变化导致 annie 不可用，如果你知道有新的可用的 `ccode`，可以直接使用 `annie -ccode ...` 而不用等待 annie 更新（当然，也欢迎你给我们提一个 Pull request 来更新默认的 `ccode`）
 
 最好是每次下载都附带登录过的 Cookie 以避免部分 `ccode` 的问题
 
 
 ## Contributing
 
-Lux is an open source project and built on the top of open-source projects. Check out the [Contributing Guide](./CONTRIBUTING.md) to get started.
+Annie is an open source project and built on the top of open-source projects. If you are interested, then you are welcome to contribute. Let's make Annie better, together. 💪
 
-Thanks for [JetBrains](https://www.jetbrains.com/?from=lux) for the wonderful IDE.
+Check out the [Contributing Guide](./CONTRIBUTING.md) to get started.
 
-<a href="https://www.jetbrains.com/?from=lux"><img src="static/jetbrains-variant-3.svg" /></a>
+Special thanks to [@Yasujizr](https://github.com/Yasujizr) who designed the amazing logo!
+
+Thanks for [JetBrains](https://www.jetbrains.com/?from=annie) for the wonderful IDE.
+
+<a href="https://www.jetbrains.com/?from=annie"><img src="static/jetbrains-variant-3.svg" /></a>
 
 ## Authors
 
-Code with ❤️ by [iawia002](https://github.com/iawia002) and lovely [contributors](https://github.com/iawia002/lux/graphs/contributors)
+Code with ❤️ by [iawia002](https://github.com/iawia002) and lovely [contributors](https://github.com/iawia002/annie/graphs/contributors)
 
 
 ## Similar projects
