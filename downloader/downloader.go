@@ -546,7 +546,7 @@ func (downloader *Downloader) aria2(title string, stream *extractors.Stream) err
 	return nil
 }
 
-func (downloader *Downloader) GetInfo(d *types.Data) (Site, Title, Type string, Size int64, FileNameLength int, stream *types.Stream) {
+func (downloader *Downloader) GetInfo(d *extractors.Data) (Site, Title, Type string, Size int64, FileNameLength int, stream *extractors.Stream) {
 	sortedStreams := genSortedStreams(d.Streams)
 	streamName := downloader.option.Stream
 	if streamName == "" {
